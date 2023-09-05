@@ -27,7 +27,7 @@ namespace Infrastructure.Services
                 new Claim(ClaimTypes.GivenName, user.DisplayName)
             };
 
-            var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
+            var creds = new SigningCredentials(_key, SecurityAlgorithms.Aes128CbcHmacSha256);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {

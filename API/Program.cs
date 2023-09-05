@@ -7,6 +7,9 @@ using API.Extensions;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Core.Entities.Identity;
+using Infrastructure.Services;
+using System.Net;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,13 +31,15 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductBrandRepository, ProductBrandRepository>();
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 // Fetching the Redis connection string and setting up Redis
 var redisConfig = builder.Configuration.GetConnectionString("Redis");
 builder.Services.AddSingleton<RedisConnectionFactory>(new RedisConnectionFactory(redisConfig));
 builder.Services.AddSingleton<IConnectionMultiplexer>(sp => sp.GetRequiredService<RedisConnectionFactory>().Connection());
 
-
+//Configure autoMapper
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 

@@ -1,3 +1,4 @@
+using System.Net.Http.Headers;
 using System.Text;
 using Core.Entities.Identity;
 using Infrastructure.Identity;
@@ -23,6 +24,12 @@ namespace API.Extensions
             .AddEntityFrameworkStores<AppIdentityDbContext>()
             .AddSignInManager<SignInManager<AppUser>>();
 
+            // var builder = services.AddIdentityCore<AppUser>();
+            
+            // builder = new IdentityBuilder(builder.UserType, builder.Services);
+            // builder.AddEntityFrameworkStores<AppIdentityDbContext>();
+            // builder.AddSignInManager<SignInManager<AppUser>>();
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>{
                     options.TokenValidationParameters = new TokenValidationParameters
@@ -30,7 +37,8 @@ namespace API.Extensions
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Token:Key"])),
                         ValidIssuer = configuration["Token:Issuer"],
-                        ValidateIssuer = true
+                        ValidateIssuer = true,
+                        ValidateAudience = false
                     };
                 });
 
