@@ -24,7 +24,10 @@ namespace Infrastructure.Data
 
         public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Products
+                .Include(p => p.category)
+                .Include(p=> p.productBrand)
+                .ToListAsync();
         }
 
         public async Task AddProductAsync(Product product)
@@ -45,6 +48,11 @@ namespace Infrastructure.Data
         public async Task<int> SaveChangesAsync()
         {
             return await _context.SaveChangesAsync();
+        }
+
+        public Task<IReadOnlyList<Product>> GetProductsAsync(string sort, int pageSize, int pageIndex)
+        {
+            throw new NotImplementedException();
         }
     }
 }

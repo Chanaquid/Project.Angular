@@ -1,5 +1,9 @@
+using API.Dtos;
+using API.Helpers;
+using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
+using Core.Specifications;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,42 +17,57 @@ namespace API.Controllers
 
     public class ProductsController : ControllerBase
     {
-        private readonly IProductRepository _productRepository;
+        // private readonly IProductRepository _productRepository;
+
+        public IGenericRepository<Product> _productRepository {get;}
+
+        public IGenericRepository<Category> _categoryRepository {get;}
+        public IGenericRepository<ProductBrand> _productBrandRepository{get;}
+        public IMapper _mapper {get;}
         
-        public ProductsController(IProductRepository productRepository)
+        public ProductsController(IGenericRepository<Product> productRepository, IGenericRepository<Category> categoryRepository, IGenericRepository<ProductBrand> productBrandRepository, IMapper mapper)
         {
             _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
+            _productBrandRepository = productBrandRepository;
+            _mapper = mapper;
         }
 
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts()
+        public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts([FromQuery]ProductSpecParams productParams)
         {
-            try
-            {
-                var products = await _productRepository.GetProductsAsync();
+            var spec = new ProductsWithTypesAndBrandsSpecification(productParams);
 
-                return Ok(products);
-            }
-            catch(Exception)
-            {
-                return StatusCode(500, "Internal server error. Please try again");
-            }
-        
+            var countSpec = new ProductWithFilterForCountSpecification(productParams);
+
+            var totalItems = await _productRepository.CountAsync(countSpec);
+
+            var products = await _productRepository.ListAsync(spec);
+
+            var data = _mapper
+                .Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
+
+            // //Shapping the data
+            return Ok(new Pagination<ProductToReturnDto>(productParams.pageIndex, productParams.pageSize, totalItems, data));
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(int id)
+        public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
+            var spec = new ProductsWithTypesAndBrandsSpecification(id);
+
             try
             {
-                return await _productRepository.GetProductByIdAsync(id);
+                var product = await _productRepository.GetEntityWithSpec(spec);
+
+                return _mapper.Map<Product, ProductToReturnDto>(product);
             }
             catch(Exception)
             {
                 return StatusCode(500, "Internal server error. Please try again");
             }
-            
+
 
         }
 
@@ -62,7 +81,7 @@ namespace API.Controllers
                     return BadRequest("Invalid product data");
                 }
 
-                await _productRepository.AddProductAsync(product);
+                await _productRepository.AddAsync(product);
                 await _productRepository.SaveChangesAsync();
 
                 return CreatedAtAction(nameof(GetProduct), new { id = product.Id}, product);
@@ -85,7 +104,7 @@ namespace API.Controllers
                     return BadRequest("Invalid product data or mismatched IDs");
                 }
 
-                var existingProduct = await _productRepository.GetProductByIdAsync(id);
+                var existingProduct = await _productRepository.GetByIdAsync(id);
                 
                 if(existingProduct == null){
 
@@ -96,7 +115,7 @@ namespace API.Controllers
                  //Update properties of the existing product from the provided product
                  existingProduct.Name = product.Name;
                  
-                 _productRepository.UpdateProduct(existingProduct);
+                 _productRepository.Update(existingProduct);
 
                 return NoContent();
             }
@@ -115,13 +134,13 @@ namespace API.Controllers
         {
             try
             {
-                var product = await _productRepository.GetProductByIdAsync(id);
+                var product = await _productRepository.GetByIdAsync(id);
                 if(product == null)
                 {
                     return NotFound("Product not found");
                 }
 
-                _productRepository.DeleteProductAsync(product);
+                _productRepository.Delete(product);
                 await _productRepository.SaveChangesAsync();
 
                 return NoContent(); // 204 error response is appropiate for DELETE on success.
@@ -131,6 +150,18 @@ namespace API.Controllers
                 return StatusCode(500, "Internal server error. Could not delete product");
             }
             
+        }
+
+        [HttpGet("brands")]
+        public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
+        {
+            return Ok(await _productBrandRepository.ListAllAsync());
+        }
+
+        [HttpGet("categories")]
+        public async Task<ActionResult<IReadOnlyList<Category>>> GetProductTypes()
+        {
+            return Ok(await _categoryRepository.ListAllAsync());
         }
 
 

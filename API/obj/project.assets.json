@@ -156,6 +156,26 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Microsoft.AspNetCore.Cors/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Extensions": "2.2.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.2.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Cors.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Cors.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/7.0.10": {
         "type": "package",
         "compile": {
@@ -1665,6 +1685,19 @@
         "lib/net7.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.xml",
         "microsoft.aspnetcore.authentication.openidconnect.7.0.10.nupkg.sha512",
         "microsoft.aspnetcore.authentication.openidconnect.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Cors/2.2.0": {
+      "sha512": "LFlTM3ThS3ZCILuKnjy8HyK9/IlDh3opogdbCVx6tMGyDzTQBgMPXLjGDLtMk5QmLDCcP3l1TO3z/+1viA8GUg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.cors/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Cors.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Cors.xml",
+        "microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.cors.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/7.0.10": {
@@ -3772,6 +3805,7 @@
       "Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.10",
       "Microsoft.AspNetCore.Authentication.OpenIdConnect >= 7.0.10",
+      "Microsoft.AspNetCore.Cors >= 2.2.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.5",
       "Microsoft.EntityFrameworkCore >= 7.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.10",
@@ -3781,23 +3815,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\danko\\.nuget\\packages\\": {},
+    "C:\\Users\\md\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\byteShop\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\md\\Desktop\\byteShop\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\Projects\\byteShop\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\danko\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\byteShop\\API\\obj\\",
+      "projectPath": "C:\\Users\\md\\Desktop\\byteShop\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\md\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\md\\Desktop\\byteShop\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\danko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\md\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3806,17 +3840,19 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Projects\\byteShop\\Core\\Core.csproj": {
-              "projectPath": "D:\\Projects\\byteShop\\Core\\Core.csproj"
+            "C:\\Users\\md\\Desktop\\byteShop\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\md\\Desktop\\byteShop\\Core\\Core.csproj"
             },
-            "D:\\Projects\\byteShop\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "D:\\Projects\\byteShop\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\md\\Desktop\\byteShop\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\md\\Desktop\\byteShop\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -3842,6 +3878,10 @@
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
             "target": "Package",
             "version": "[7.0.10, )"
+          },
+          "Microsoft.AspNetCore.Cors": {
+            "target": "Package",
+            "version": "[2.2.0, )"
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
@@ -3889,7 +3929,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

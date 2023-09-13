@@ -16,6 +16,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("CorsPolicy", policy => {
+    policy.AllowAnyHeader()
+          .AllowAnyMethod()
+          .WithOrigins("https://localhost:4200")
+          .WithExposedHeaders("Access-Control-Allow-Origin");
+});
+
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -33,10 +43,17 @@ builder.Services.AddScoped<IProductBrandRepository, ProductBrandRepository>();
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+
+
 // Fetching the Redis connection string and setting up Redis
 var redisConfig = builder.Configuration.GetConnectionString("Redis");
 builder.Services.AddSingleton<RedisConnectionFactory>(new RedisConnectionFactory(redisConfig));
 builder.Services.AddSingleton<IConnectionMultiplexer>(sp => sp.GetRequiredService<RedisConnectionFactory>().Connection());
+
 
 //Configure autoMapper
 builder.Services.AddAutoMapper(typeof(Program));
@@ -51,6 +68,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("CorsPolicy");
+
 
 app.UseAuthentication();
 app.UseAuthorization();

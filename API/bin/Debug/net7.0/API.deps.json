@@ -13,6 +13,7 @@
           "Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.10",
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": "7.0.10",
+          "Microsoft.AspNetCore.Cors": "2.2.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.5",
           "Microsoft.EntityFrameworkCore": "7.0.10",
           "Microsoft.EntityFrameworkCore.Design": "7.0.10",
@@ -105,6 +106,15 @@
             "assemblyVersion": "7.0.10.0",
             "fileVersion": "7.0.1023.36439"
           }
+        }
+      },
+      "Microsoft.AspNetCore.Cors/2.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Extensions": "2.2.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Options": "7.0.1"
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/7.0.10": {
@@ -890,6 +900,13 @@
       "sha512": "sha512-qg5aZJ3dXN9Fyw+jRC4Hpnn/RGZlOA948LyLEPfY4/3CaSj+cqi2xdElqIABA3MpwU2vkRjBc/nXy07az6meqA==",
       "path": "microsoft.aspnetcore.authentication.openidconnect/7.0.10",
       "hashPath": "microsoft.aspnetcore.authentication.openidconnect.7.0.10.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Cors/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LFlTM3ThS3ZCILuKnjy8HyK9/IlDh3opogdbCVx6tMGyDzTQBgMPXLjGDLtMk5QmLDCcP3l1TO3z/+1viA8GUg==",
+      "path": "microsoft.aspnetcore.cors/2.2.0",
+      "hashPath": "microsoft.aspnetcore.cors.2.2.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/7.0.10": {
       "type": "package",

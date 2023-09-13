@@ -9,9 +9,10 @@ namespace API.Helpers
     {
         public MappingProfiles()
         {
-            CreateMap<Address, AddressDto>().ReverseMap();
-            CreateMap<CustomerBasketDto, CustomerBasket>();
-            CreateMap<BasketItemDto, BasketItem>();
+            CreateMap<Product, ProductToReturnDto>()
+                .ForMember(d => d.ProductBrand, o => o.MapFrom(s => s.productBrand.Name))
+                .ForMember(d => d.Category, o => o.MapFrom(s => s.category.Name))
+                .ForMember(d => d.PictureUrl, o => o.MapFrom<ProductUrlResolver>());
         }
     }
 }
