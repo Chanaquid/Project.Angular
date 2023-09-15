@@ -17,8 +17,8 @@ namespace API.Controllers
 
     public class ProductsController : ControllerBase
     {
-        // private readonly IProductRepository _productRepository;
 
+        // private readonly IProductRepository _productRepository;
         public IGenericRepository<Product> _productRepository {get;}
 
         public IGenericRepository<Category> _categoryRepository {get;}
@@ -44,7 +44,7 @@ namespace API.Controllers
             var totalItems = await _productRepository.CountAsync(countSpec);
 
             var products = await _productRepository.ListAsync(spec);
-
+            
             var data = _mapper
                 .Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
 
@@ -116,8 +116,11 @@ namespace API.Controllers
                  existingProduct.Name = product.Name;
                  
                  _productRepository.Update(existingProduct);
-
-                return NoContent();
+                 await _productRepository.SaveChangesAsync();
+                 
+                
+                return Ok(existingProduct);
+                
             }
             catch(Exception)
             {

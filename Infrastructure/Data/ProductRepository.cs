@@ -38,6 +38,7 @@ namespace Infrastructure.Data
         public void UpdateProduct(Product product)
         {
             _context.Entry(product).State = EntityState.Modified;
+            _context.SaveChanges();
         }
 
         public void DeleteProductAsync(Product product)
