@@ -5,7 +5,7 @@
 
     <ul>
         <li class="list-unstyled" *ngFor="let product of products">
-            {{product.name}}
+            {{product.name}} - {{product.price | currency:'USD':true:'1.2-2'}}
         </li>
     </ul>
     <!-- comment -->
