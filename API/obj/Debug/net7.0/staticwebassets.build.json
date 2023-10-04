@@ -1,11 +1,105 @@
 {
   "Version": 1,
-  "Hash": "bUm1vPqwZHJejLhtNIB7WgmMI8ngxypkYrDApg4MvgQ=",
+  "Hash": "FAa4KxJ0h4Dv65kGjFrKfmkqbGiOuC2QLCFHZPiSgQI=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "API\\wwwroot",
+      "Source": "API",
+      "ContentRoot": "C:\\Users\\cj\\byteShop\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\cj\\byteShop\\API\\wwwroot\\images\\products\\AMD-RYZEN-7-5800X.jpg",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cj\\byteShop\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/products/AMD-RYZEN-7-5800X.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\AMD-RYZEN-7-5800X.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\cj\\byteShop\\API\\wwwroot\\images\\products\\GeForce-RTX-3070.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cj\\byteShop\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/products/GeForce-RTX-3070.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\GeForce-RTX-3070.png"
+    },
+    {
+      "Identity": "C:\\Users\\cj\\byteShop\\API\\wwwroot\\images\\products\\Intel_Core_i7_13700K.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cj\\byteShop\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/products/Intel_Core_i7_13700K.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\Intel_Core_i7_13700K.png"
+    },
+    {
+      "Identity": "C:\\Users\\cj\\byteShop\\API\\wwwroot\\images\\products\\Radeon-6700-xt.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cj\\byteShop\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/products/Radeon-6700-xt.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\Radeon-6700-xt.png"
+    },
+    {
+      "Identity": "C:\\Users\\cj\\byteShop\\API\\wwwroot\\images\\products\\rx6800xt.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cj\\byteShop\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/products/rx6800xt.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\rx6800xt.png"
+    }
+  ]
 }

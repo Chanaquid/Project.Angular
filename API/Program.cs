@@ -74,7 +74,7 @@ app.UseCors("CorsPolicy");
 
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseStaticFiles();
 app.MapControllers();
 
 
@@ -97,5 +97,8 @@ catch (Exception ex)
     
     logger.LogError(ex, "An error occured during migration");
 }
+
+
+
 
 app.Run();

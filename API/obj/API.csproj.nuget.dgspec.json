@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\byteShop\\API\\API.csproj": {}
+    "C:\\Users\\cj\\byteShop\\API\\API.csproj": {}
   },
   "projects": {
-    "H:\\byteShop\\API\\API.csproj": {
+    "C:\\Users\\cj\\byteShop\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\byteShop\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\cj\\byteShop\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "H:\\byteShop\\API\\API.csproj",
+        "projectPath": "C:\\Users\\cj\\byteShop\\API\\API.csproj",
         "packagesPath": "C:\\Users\\cj\\.nuget\\packages\\",
-        "outputPath": "H:\\byteShop\\API\\obj\\",
+        "outputPath": "C:\\Users\\cj\\byteShop\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "H:\\byteShop\\Core\\Core.csproj": {
-                "projectPath": "H:\\byteShop\\Core\\Core.csproj"
+              "C:\\Users\\cj\\byteShop\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\cj\\byteShop\\Core\\Core.csproj"
               },
-              "H:\\byteShop\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "H:\\byteShop\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\cj\\byteShop\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\cj\\byteShop\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -117,14 +117,14 @@
         }
       }
     },
-    "H:\\byteShop\\Core\\Core.csproj": {
+    "C:\\Users\\cj\\byteShop\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\byteShop\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\cj\\byteShop\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "H:\\byteShop\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\cj\\byteShop\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\cj\\.nuget\\packages\\",
-        "outputPath": "H:\\byteShop\\Core\\obj\\",
+        "outputPath": "C:\\Users\\cj\\byteShop\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -186,14 +186,14 @@
         }
       }
     },
-    "H:\\byteShop\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\cj\\byteShop\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\byteShop\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\cj\\byteShop\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "H:\\byteShop\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\cj\\byteShop\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\cj\\.nuget\\packages\\",
-        "outputPath": "H:\\byteShop\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\cj\\byteShop\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -214,8 +214,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "H:\\byteShop\\Core\\Core.csproj": {
-                "projectPath": "H:\\byteShop\\Core\\Core.csproj"
+              "C:\\Users\\cj\\byteShop\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\cj\\byteShop\\Core\\Core.csproj"
               }
             }
           }
