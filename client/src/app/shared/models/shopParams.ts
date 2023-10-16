@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export class ShopParams {
     brandId = 0;
     categoryId = 0;
@@ -5,4 +6,13 @@ export class ShopParams {
     pageNumber = 1;
     pageSize = 6;
 
+=======
+export class ShopParams{
+  brandId = 0;
+  categoryId = 0;
+  sort = 'name';
+  pageNumber = 1;
+  pageSize = 6;
+  search = '';
+>>>>>>> development
 }

@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
+=======
+import { BasketService } from 'src/app/basket/basket.service';
+import { BasketItem } from 'src/app/shared/models/basket';
+>>>>>>> development
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,5 +11,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
+<<<<<<< HEAD
 
+=======
+  constructor(public basketService: BasketService){}
+
+  getCount(items: BasketItem[]){
+    return items.reduce((sum, item) => sum + item.quantity, 0)
+  }
+>>>>>>> development
 }
